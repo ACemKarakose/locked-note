@@ -9,21 +9,18 @@ const loginAuthRouter = require("./routes/loginAuth");
 
 const app = express();
 app.use(bodyParser.json());
-mongoose.connect(
-  `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.qcgsfuz.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
-  (e) => {
-    if (e) {
-      console.log(`MongoDB Connection error => ${e}`);
-    } else {
-      console.log("-----Connected MongoDB DataBase--------");
-    }
+mongoose.connect(process.env.MONGO_SERVER, (e) => {
+  if (e) {
+    console.log(`MongoDB Connection error => ${e}`);
+  } else {
+    console.log("-----Connected MongoDB DataBase--------");
   }
-);
+});
 
 app.use("/auth", registerAuthRouter);
 app.use("/auth", loginAuthRouter);
 app.get("/", (req, res) => {
-  res.send(`${process.env.DATABASE_USERNAME} selamlar son deneme 2`);
+  res.send(`${process.env.DATABASE_USERNAME} selamlar son deneme 3`);
 });
 const server = app.listen(process.env.PORT || 3000, function () {
   console.log("--------SERVER WORKING--------");
