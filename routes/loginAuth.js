@@ -51,11 +51,12 @@ router.post("/login", (req, res) => {
     })
     .catch((err) => {
       res.send(err);
+      /*
       res.json({
         c: err,
         CODE: 19,
         MSG: "Invalid email or Password",
-      });
+      }); */
     });
 });
 module.exports = router;
