@@ -24,9 +24,9 @@ router.post("/register", (req, res) => {
     return;
   }
 
-  const salt = bcrypt.genSaltSync(10);
-  const hashPassword = bcrypt.hashSync(req.body.USER_PASSWORD, salt);
-  const user = new User({ ...req.body, USER_PASSWORD: hashPassword });
+  //const salt = bcrypt.genSaltSync(10);
+  //const hashPassword = bcrypt.hashSync(req.body.USER_PASSWORD, salt);
+  const user = new User({ ...req.body });
   user
     .save()
     .then((user) => {
