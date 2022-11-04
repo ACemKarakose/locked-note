@@ -50,7 +50,7 @@ router.post("/login", (req, res) => {
       });
     })
     .catch((err) => {
-      res.send(err);
+      res.json({ err });
       /*
       res.json({
         c: err,
