@@ -23,7 +23,7 @@ mongoose.connect(
 app.use("/auth", registerAuthRouter);
 app.use("/auth", loginAuthRouter);
 app.get("/", (req, res) => {
-  res.send(`${process.env.DATABASE_USERNAME} selamlar`);
+  res.send(`${process.env.DATABASE_USERNAME} selamlar son deneme`);
 });
 const server = app.listen(process.env.PORT || 3000, function () {
   console.log("--------SERVER WORKING--------");
