@@ -34,6 +34,7 @@ router.post("/register", (req, res) => {
     })
     .catch((err) => {
       res.json({
+        err,
         CODE: 19,
         MSG: `The mail you entered is Taken`,
       });
