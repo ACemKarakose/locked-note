@@ -23,7 +23,7 @@ mongoose.connect(
 app.use("/auth", registerAuthRouter);
 app.use("/auth", loginAuthRouter);
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.send("Seni Seviyorum Goksu");
 });
 const server = app.listen(process.env.PORT || 3000, function () {
   console.log("--------SERVER WORKING--------");
