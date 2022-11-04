@@ -31,8 +31,8 @@ router.post("/login", (req, res) => {
         });
         return;
       }
-      const isValid = bcrypt.compareSync(USER_PASSWORD, user.USER_PASSWORD);
-      if (!isValid) {
+      //const isValid = bcrypt.compareSync(USER_PASSWORD, user.USER_PASSWORD);
+      if (user.USER_PASSWORD === !USER_PASSWORD) {
         res.json({
           CODE: 19,
           MSG: "Invalid Password",
